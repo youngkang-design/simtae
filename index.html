@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <button id="continueButton">버튼 누르고 계속보기</button>
+    <a id="continueButton" target="_blank">버튼 누르고 계속보기</a>
 
     <script>
         let type;
@@ -36,11 +36,12 @@
             const urlParams = new URLSearchParams(window.location.search);
             type = urlParams.get('type');
             console.log(type);
+
+            document.getElementById('continueButton').href = 'https://destination-affiliate-url.com';
         }
 
         document.getElementById('continueButton').addEventListener('click', function() {
             window.location.href = 'https://destination-url.com/' + type;
-            window.open('https://destination-affiliate-url.com', '_blank');
         });
     </script>
 </body>
