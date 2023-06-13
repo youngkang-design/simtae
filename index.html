@@ -3,7 +3,17 @@
 <head>
     <title>My Page</title>
     <style>
-        /* 여기에 필요한 CSS 스타일을 추가하세요. */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
         #continueButton {
             display: inline-block;
             padding: 10px 20px;
@@ -25,10 +35,17 @@
             box-shadow: 0 5px #666;
             transform: translateY(4px);
         }
+
+        #notice {
+            font-size: 10px;
+            margin-top: 20px;
+            width: 80%;
+        }
     </style>
 </head>
 <body>
-    <a id="continueButton" target="_blank">버튼 누르고 계속보기</a>
+    <button id="continueButton">버튼 누르고 결과 보기</button>
+    <p id="notice">* 이 포스팅은 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</p>
 
     <script>
         let type;
@@ -36,12 +53,14 @@
             const urlParams = new URLSearchParams(window.location.search);
             type = urlParams.get('type');
             console.log(type);
-
-            document.getElementById('continueButton').href = 'https://destination-affiliate-url.com';
         }
 
         document.getElementById('continueButton').addEventListener('click', function() {
-            window.location.href = 'https://destination-url.com/' + type;
+            if (confirm("새로운 페이지로 이동하시겠습니까?")) {
+                window.location.href = 'https://dailybuddha.oopy.io/' + type;
+            } else {
+                window.open('https://link.coupang.com/a/0260d', '_self');
+            }
         });
     </script>
 </body>
