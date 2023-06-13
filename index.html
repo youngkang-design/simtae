@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <style>
+        /* 여기에 필요한 CSS 스타일을 추가하세요. */
+        #continueButton {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        #continueButton:hover {background-color: #3e8e41}
+        #continueButton:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <button id="continueButton">버튼 누르고 계속보기</button>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+            console.log(type);
+        }
+
+        document.getElementById('continueButton').addEventListener('click', function() {
+            window.location.href = 'https://destination-url.com/1';
+            window.open('https://destination-affiliate-url.com', '_blank');
+        });
+    </script>
+</body>
+</html>
