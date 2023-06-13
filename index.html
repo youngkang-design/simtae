@@ -31,14 +31,15 @@
     <button id="continueButton">버튼 누르고 계속보기</button>
 
     <script>
+        let type;
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const type = urlParams.get('type');
+            type = urlParams.get('type');
             console.log(type);
         }
 
         document.getElementById('continueButton').addEventListener('click', function() {
-            window.location.href = 'https://destination-url.com/1';
+            window.location.href = 'https://destination-url.com/' + type;
             window.open('https://destination-affiliate-url.com', '_blank');
         });
     </script>
