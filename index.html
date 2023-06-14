@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>My Page</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
 
-        #continueButton {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
+      #continueButton {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
 
-        #continueButton:hover {background-color: #3e8e41}
-        #continueButton:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
+      #continueButton:hover {
+        background-color: #3e8e41;
+      }
+      #continueButton:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
 
-        #notice {
-            font-size: 10px;
-            margin-top: 20px;
-            width: 80%;
-        }
+      #notice {
+        font-size: 10px;
+        margin-top: 20px;
+        width: 80%;
+      }
     </style>
-</head>
-<body>
-    <button id="continueButton">버튼 누르고 결과 보기</button>
-    <p id="notice">* 이 포스팅은 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  </head>
+  <body>
+    <a id="continueButton" href="https://dailybuddha.oopy.io/unknown"
+      >버튼 누르고 결과 보기</a
+    >
+    <p id="notice">
+      * 이 포스팅은 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를
+      제공받습니다.
+    </p>
 
     <script>
-        let type;
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            type = urlParams.get('type');
-            console.log(type);
-        }
+      (() => {
+        const params = new URLSearchParams(window.location.search);
+        const resultUrl = `https://dailybuddha.oopy.io/${params.get("type")}${
+          window.location.search
+        }`;
+        const adUrl = "https://link.coupang.com/a/0260d";
+        const continueButton = document.querySelector("#continueButton");
 
-        document.getElementById('continueButton').addEventListener('click', function() {
-            if (confirm("새로운 페이지로 이동하시겠습니까?")) {
-                window.location.href = 'https://dailybuddha.oopy.io/' + type;
-            } else {
-                window.open('https://link.coupang.com/a/0260d', '_self');
-            }
+        window.onload = function () {
+          continueButton.href = resultUrl;
+        };
+
+        continueButton.addEventListener("click", function () {
+          window.open(adUrl);
         });
+      })();
     </script>
-</body>
+  </body>
 </html>
