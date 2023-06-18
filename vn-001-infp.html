@@ -963,7 +963,16 @@
               alert("Tôi đã sao chép liên kết");
           });
       });
-      </script>
+
+      // <div> 요소를 선택합니다.
+      var replay = document.getElementById('replay');
+
+      // 클릭 이벤트 핸들러를 추가합니다.
+      replay.addEventListener('click', function() {
+      // 특정 링크로 이동합니다.
+      window.location.href = 'https://destination.com';
+      });
+    </script>
     <style>
       .Logo {
         backface-visibility: hidden;
@@ -1705,6 +1714,7 @@
             <div class="btnContainer" contenteditable="false">
               <div
                 class="btnT2 Button"
+                id="replay"
                 style="
                   background: rgb(255, 255, 255);
                   box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px;
