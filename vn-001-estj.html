@@ -209,8 +209,8 @@
     </style>
     <style>
       :root {
-        --simtae-key: rgba(255, 255, 255, 1);
-        --simtae-bg: rgba(254, 140, 172, 1);
+        --simtae-key: #F45003;
+        --simtae-bg: #fff;
       }
     </style>
     <style>
@@ -911,7 +911,7 @@
     </style>
     <style>
       .iQ__aqkvKrkj {
-        font-family: "NEXON Lv2 Gothic", sans-serif;
+        font-family: "Open Sans", sans-serif;
         transition: background-color 1s ease;
       }
       .iQ__aqkvKrkj * {
@@ -937,6 +937,34 @@
       id="kakao"
       src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
     ></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          // Replace 'destinationurl.com' with the URL you want to share
+          var urlToShare = 'https://destinationurl.com';
+      
+          // Facebook share
+          document.getElementById('shareOnFacebook').addEventListener('click', function() {
+              window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(urlToShare), 
+                          'facebook-share-dialog', 
+                          'width=800,height=600'); 
+              return false;
+          });
+      
+          // Copy link to clipboard
+          document.getElementById('copyLink').addEventListener('click', function() {
+              var dummy = document.createElement('input'),
+              text = urlToShare;
+      
+              document.body.appendChild(dummy);
+              dummy.value = text;
+              dummy.select();
+              document.execCommand('copy');
+              document.body.removeChild(dummy);
+      
+              alert("Link copied to clipboard");
+          });
+      });
+      </script>
     <style>
       .Logo {
         backface-visibility: hidden;
@@ -1511,83 +1539,84 @@
       }
     </style>
   </head>
-  <body style="background-color: rgb(254, 140, 172); overflow: scroll">
+  <body style="background-color: #fff; overflow: scroll">
     <div id="root" style="position: unset">
       <div
-        class="iQ__aqkvKrkj App"
-        style="background-color: rgb(254, 140, 172)"
+        class="App"
+        style="background-color: #fff"
       >
         <div
-          class="iQ__WZJPL0tL appContents"
+          class="appContents"
           style="
-            background-color: rgb(254, 140, 172);
+            background-color: #fff;
             color: rgb(255, 255, 255);
             position: absolute;
             overflow: visible;
           "
         >
           <div
-            class="iQ__hPO3BUnl ResultPage"
+            class="ResultPage"
             style="
-              background-color: rgb(254, 140, 172);
+              background-color: #fff;
               color: rgb(255, 255, 255);
               will-change: transform, opacity;
               opacity: 1;
               visibility: visible;
             "
           >
-            <div class="iQ__WXmizsRf ResultImage">
+            <div class="ResultImage">
               <div
-                class="iQ__z98FsxJL imgHover"
+                class="imgHover"
                 style="
                   background-image: linear-gradient(
                     rgba(254, 140, 172, 0) 0%,
                     rgba(254, 140, 172, 0) 80%,
-                    rgb(254, 140, 172) 100%
+                    #fff 100%
                   );
                 "
               ></div>
               <div
-                class="iQ__NVudla3m image"
+                class="image"
                 style="
                   background-image: url('https://doda-static.com/img/1200/65/1/1/1686989911675-6641424.png');
                 "
               ></div>
             </div>
             <div
-              class="iQ__JdChXEV8 ResultCard"
+              class="ResultCard"
               style="
                 max-width: 450px;
                 width: 90%;
                 margin-top: -35px;
                 padding: 20px 10px;
                 border-radius: 20px;
-                background-color: rgba(254, 140, 172, 0.8);
+                background-color: #fff
+                ;
                 box-shadow: rgba(255, 255, 255, 0.19) 0px 5px 15px 0px;
                 opacity: 1;
                 visibility: visible;
               "
             >
-              <div class="iQ__jArnEt9v ResultCardTitle">
+              <div class="ResultCardTitle">
                 <div
-                  class="iQ__dbPxyVCp smallTitle"
-                  style="font-size: 18px; color: rgb(255, 255, 255)"
+                  class="smallTitle"
+                  style="font-size: 18px; color: #000"
                 >
                   당신의 유형은
                 </div>
                 <div
-                  class="iQ__U107dDw6 mainTitle"
-                  style="font-size: 24px; color: rgb(255, 255, 255)"
+                  class="mainTitle"
+                  style="font-size: 24px; color: #000"
                 >
                   신민규
                 </div>
               </div>
               <div
-                class="iQ__44NJgo69 Line"
+                class="Line"
                 style="height: 5px; margin: 20px 0px"
               >
                 <div
-                  class="iQ__fz7VQkUg box"
+                  class="box"
                   style="
                     width: 30px;
                     background-color: rgba(255, 255, 255, 0.25);
@@ -1595,8 +1624,8 @@
                 ></div>
               </div>
               <div
-                class="iQ__xTufyuJL ResultCardText"
-                style="color: rgb(255, 255, 255)"
+                class="ResultCardText"
+                style="color: #000"
               >
                 <p style="font-weight: bold">
                   <span style="text-align: unset; font-size: large"
@@ -1671,7 +1700,7 @@
                 </table>
               </div>
               <div
-                class="iQ__i715P4Tt Space"
+                class="Space"
                 style="
                   height: 10px;
                   width: 100%;
@@ -1680,52 +1709,43 @@
                 "
               ></div>
               <div
-                class="iQ__SWzMLcap shareText"
-                style="color: rgb(255, 255, 255)"
+                class="shareText"
+                style="color: #000"
               >
-                친구에게 공유하기
+                Chia sẻ với bạn bè
               </div>
-              <div class="iQ__OBwOYQzB ShareBtns flex">
-                <div class="iQ__RsqtiZho ShareButton">
+              <div class="ShareBtns flex">
+                <div id="shareOnFacebook" class="ShareButton">
                   <img
-                    class="iQ__WbwA5Np4"
                     src="https://o.doda-static.com/res/share/f.png"
                   />
                 </div>
-                <div class="iQ__MkyCac4I ShareButton">
+                <div id="shareOnMessenger" class="ShareButton">
                   <img
-                    class="iQ__jHwCevh0"
-                    src="https://o.doda-static.com/res/share/t.png"
+                    src="https://o.doda-static.com/res/share/m.png"
                   />
                 </div>
-                <div class="iQ__1tBe0ons ShareButton">
+                <div id="copyLink" class="ShareButton">
                   <img
-                    class="iQ__BC1gZEnE"
-                    src="https://o.doda-static.com/res/share/k.png"
-                  />
-                </div>
-                <div class="iQ__CujLJpJA ShareButton">
-                  <img
-                    class="iQ__jVVhcdUu"
                     src="https://o.doda-static.com/res/share/l.png"
                   />
                 </div>
               </div>
             </div>
-            <div class="iQ__TXGZrAin btnContainer" contenteditable="false">
+            <div class="btnContainer" contenteditable="false">
               <div
-                class="iQ__d50uDZPC btnT2 Button"
+                class="btnT2 Button"
                 style="
                   background: rgb(255, 255, 255);
-                  box-shadow: rgba(255, 255, 255, 0.34) 0px 5px 20px;
+                  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px;
                   width: 70%;
                   transition: transform 0.2s ease-in-out 0s,
                     background-color 0.2s ease 0s, opacity 0.2s ease 0s;
                 "
               >
-                <div class="iQ__NxkzL0dg btnIcon">
+                <div class="btnIcon">
                   <span
-                    class="iQ__rOvhG2ro material-icons"
+                    class="material-icons"
                     style="
                       color: rgb(0, 0, 0);
                       font-size: 24px;
@@ -1735,7 +1755,7 @@
                   >
                 </div>
                 <div
-                  class="iQ__7he1icYL btnText"
+                  class="btnText"
                   style="
                     font-size: 16px;
                     color: rgb(0, 0, 0);
@@ -1747,17 +1767,14 @@
                   테스트 다시하기
                 </div>
               </div>
-            </div>
-            <div
-              class="iQ__frXiARSg ByDoda"
+              <div
               style="
-                background-image: url('https://smore.im/static/template/dist/1588da066ed2b2e2db03.png');
-                visibility: hidden;
                 position: relative;
                 margin-top: 50px;
                 margin-bottom: 15px;
               "
             ></div>
+            </div>
           </div>
         </div>
       </div>
