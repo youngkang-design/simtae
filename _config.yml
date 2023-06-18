@@ -3,3 +3,8 @@ plugins:
 
 # Google Analytics 설정
 ga_tracking_id: G-37R86615DZ
+
+# jekyll-seo-tag 플러그인 설정
+seo:
+  google:
+    analytics: UA-XXXXXXXXX-X
