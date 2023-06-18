@@ -1,1 +1,5 @@
-google_analytics: G-37R86615DZ
+plugins:
+  - jekyll-seo-tag
+
+# Google Analytics 설정
+ga_tracking_id: G-37R86615DZ
