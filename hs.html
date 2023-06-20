@@ -64,8 +64,9 @@
   <body>
     <h1 id="mainTitle">하트시그널 유형 테스트</h1>
     <h2 id="subTitle">나는 하트시그널에서 누구일까?</h2>
-    <p id="countdown"></p>
+    <p>콘텐츠 보기 전에 쿠팡 쇼핑 어때요?</p>
     <a id="continueButton" href="#">버튼 누르고 결과 보기</a>
+    <p id="countdown">원치 않으시면 <span>5</span>를 클릭하세요</p>
     <p id="notice">
       * 이 포스팅은 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를
       제공받습니다.
@@ -80,6 +81,7 @@
         const adUrl = "https://link.coupang.com/a/0260d";
         const continueButton = document.querySelector("#continueButton");
         const countdownElement = document.querySelector("#countdown");
+        const countdownSpan = countdownElement.querySelector("span");
         let countdown = 5;
 
         const LAST_VISIT_TIMESTAMP_KEY = 'lastVisitTimestamp';
@@ -96,16 +98,16 @@
 
           const lastVisitTimestamp = localStorage.getItem(LAST_VISIT_TIMESTAMP_KEY);
           const buttonClicked = localStorage.getItem(BUTTON_CLICKED_KEY);
-          if (lastVisitTimestamp && Date.now() - new Date(Number(lastVisitTimestamp)) < TWO_HOURS_IN_MILLISECONDS && buttonClicked === 'true') {
+          if (buttonClicked === 'true' && lastVisitTimestamp && Date.now() - parseInt(lastVisitTimestamp, 10) < TWO_HOURS_IN_MILLISECONDS) {
             window.location.href = resultUrl;
           } else {
             const countdownInterval = setInterval(() => {
               if (countdown > 0) {
-                countdownElement.innerText = countdown;
+                countdownSpan.innerText = countdown;
                 countdown--;
               } else {
                 clearInterval(countdownInterval);
-                countdownElement.innerHTML = `<a href="https://destination.con">X</a>`;
+                countdownSpan.innerHTML = `<a href="https://destination.con">X</a>`;
               }
             }, 1000);
             continueButton.addEventListener("click", function () {
