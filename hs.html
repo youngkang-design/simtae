@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      #mainTitle {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      #subTitle {
+        font-size: 25px;
+        margin-bottom: 30px;
+      }
+
+      #countdown {
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: red;
+      }
+
+      #notice {
+        font-size: 10px;
+        margin-top: 20px;
+        width: 80%;
+      }
+
+      #continueButton {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
+
+      #continueButton:hover {
+        background-color: #3e8e41;
+      }
+      #continueButton:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="mainTitle">하트시그널 유형 테스트</h1>
+    <h2 id="subTitle">나는 하트시그널에서 누구일까?</h2>
+    <p id="countdown"></p>
+    <a id="continueButton" href="#">버튼 누르고 결과 보기</a>
+    <p id="notice">
+      * 이 포스팅은 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를
+      제공받습니다.
+    </p>
+
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search);
+        const resultUrl = `https://youngkang-design.github.io/simtae/hs-${params.get("type")}${
+          window.location.search
+        }`;
+        const adUrl = "https://link.coupang.com/a/0260d";
+        const continueButton = document.querySelector("#continueButton");
+        const countdownElement = document.querySelector("#countdown");
+        let countdown = 5;
+
+        const LAST_VISIT_TIMESTAMP_KEY = 'lastVisitTimestamp';
+        const TWO_HOURS_IN_MILLISECONDS = 2 * 60 * 60 * 1000;
+        const BUTTON_CLICKED_KEY = 'buttonClicked';
+
+        function handleButtonClick() {
+          localStorage.setItem(LAST_VISIT_TIMESTAMP_KEY, Date.now().toString());
+          localStorage.setItem(BUTTON_CLICKED_KEY, 'true');
+        }
+
+        window.onload = function () {
+          continueButton.href = resultUrl;
+
+          const lastVisitTimestamp = localStorage.getItem(LAST_VISIT_TIMESTAMP_KEY);
+          const buttonClicked = localStorage.getItem(BUTTON_CLICKED_KEY);
+          if (lastVisitTimestamp && Date.now() - new Date(Number(lastVisitTimestamp)) < TWO_HOURS_IN_MILLISECONDS && buttonClicked === 'true') {
+            window.location.href = resultUrl;
+          } else {
+            const countdownInterval = setInterval(() => {
+              if (countdown > 0) {
+                countdownElement.innerText = countdown;
+                countdown--;
+              } else {
+                clearInterval(countdownInterval);
+                countdownElement.innerHTML = `<a href="https://destination.con">X</a>`;
+              }
+            }, 1000);
+            continueButton.addEventListener("click", function () {
+              window.open(adUrl);
+              handleButtonClick();
+            });
+            countdownElement.addEventListener("click", function () {
+              if (countdown === 0) {
+                handleButtonClick();
+              }
+            });
+          }
+        };
+      })();
+    </script>
+  </body>
+</html>
