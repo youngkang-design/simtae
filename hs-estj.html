@@ -16,6 +16,36 @@
       gtag('config', 'G-37R86615DZ');
     </script>
 
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+    <script>
+      Kakao.init('201ee8c5a08a2d305153c5086196561d'); // 여기에 발급받은 자신의 앱 키를 넣습니다.
+      
+      function sendLink() {
+        Kakao.Link.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: '공유하려는 페이지 제목',
+            description: '공유하려는 페이지 설명',
+            imageUrl: '공유하려는 이미지 URL',
+            link: {
+              webUrl: '공유하려는 웹 페이지 URL',
+              mobileWebUrl: '공유하려는 모바일 페이지 URL'
+            },
+          },
+          buttons: [
+            {
+              title: '웹으로 이동',
+              link: {
+                webUrl: '웹 페이지 URL',
+                mobileWebUrl: '모바일 페이지 URL'
+              }
+            }
+          ]
+        });
+      }
+      </script>
+      
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
@@ -1675,12 +1705,12 @@
                     src="https://o.doda-static.com/res/share/t.png"
                   />
                 </div>
-                <div class="iQ__1tBe0ons ShareButton">
+                <div class="iQ__1tBe0ons kakao ShareButton" onclick="sendLink()">
                   <img
                     class="iQ__BC1gZEnE"
                     src="https://o.doda-static.com/res/share/k.png"
                   />
-                </div>
+                </div>                
                 <div class="iQ__CujLJpJA ShareButton">
                   <img
                     class="iQ__jVVhcdUu"
