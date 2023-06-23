@@ -25,12 +25,12 @@
         Kakao.Link.sendDefault({
           objectType: 'feed',
           content: {
-            title: '공유하려는 페이지 제목',
-            description: '공유하려는 페이지 설명',
+            title: '하트시그널 유형테스트',
+            description: '나는 하트시그널에서 누굴까?',
             imageUrl: '공유하려는 이미지 URL',
             link: {
-              webUrl: '공유하려는 웹 페이지 URL',
-              mobileWebUrl: '공유하려는 모바일 페이지 URL'
+              webUrl: 'https://simte.xyz/heartsignal',
+              mobileWebUrl: 'https://simte.xyz/heartsignal'
             },
           },
           buttons: [
@@ -45,7 +45,23 @@
         });
       }
       </script>
-      
+    
+    <script>
+      function shareOnTwitter() {
+        var url = 'https://simte.xyz/heartsignal';
+        var text = '하트시그널 유형테스트 - 나는 하트시그널에서 누굴까? 테스트 해보세요! #하트시그널4 #핱시 #연애테스트 #성격테스트 #유형테스트 #심리테스트';
+        var twitterWindow = window.open('https://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), 'twitter-popup', 'height=350,width=600');
+        if(twitterWindow.focus) { twitterWindow.focus(); }
+      }
+    </script>
+
+    <script>
+      function shareOnFacebook() {
+        var url = 'https://simte.xyz/heartsignal';
+        var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'facebook-popup', 'height=350,width=600');
+        if(facebookWindow.focus) { facebookWindow.focus(); }
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
@@ -58,7 +74,7 @@
     />
     <meta
       name="description"
-      content="핱시 유형 테스트 - 나는 하트시그널에서 누굴까?"
+      content="하트시그널 유형 테스트 - 나는 하트시그널에서 누굴까?"
     />
 
     <meta property="og:locale" content="ko" />
@@ -66,13 +82,13 @@
     <meta property="og:title" content="신민규" />
     <meta
       property="og:description"
-      content="핱시 유형 테스트 - 나는 하트시그널에서 누굴까?"
+      content="하트시그널 유형 테스트 - 나는 하트시그널에서 누굴까?"
     />
     <meta
       property="og:url"
       content="https://simte.xyz/heartsignal?tm=fb54a7df"
     />
-    <meta property="og:site_name" content="신민규" />
+    <meta property="og:site_name" content="하트시그널 유형 테스트" />
     <meta
       property="og:image"
       content="https://doda-static.com/img/1200/65/0/0/1686989911675-6641424.png"
@@ -1693,18 +1709,18 @@
                 친구에게 공유하기
               </div>
               <div class="iQ__OBwOYQzB ShareBtns flex">
-                <div class="iQ__RsqtiZho ShareButton">
+                <div class="iQ__RsqtiZho ShareButton" onclick="shareOnFacebook()">
                   <img
                     class="iQ__WbwA5Np4"
                     src="https://o.doda-static.com/res/share/f.png"
                   />
-                </div>
-                <div class="iQ__MkyCac4I ShareButton">
+                </div>                
+                <div class="iQ__MkyCac4I ShareButton" onclick="shareOnTwitter()">
                   <img
                     class="iQ__jHwCevh0"
                     src="https://o.doda-static.com/res/share/t.png"
                   />
-                </div>
+                </div>                
                 <div class="iQ__1tBe0ons kakao ShareButton" onclick="sendLink()">
                   <img
                     class="iQ__BC1gZEnE"
