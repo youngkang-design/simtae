@@ -11,9 +11,12 @@
  
        gtag('config', 'G-37R86615DZ');
      </script>
+
     <title>하트시그널 유형 테스트</title>
+
     <style>
       body {
+        font-family: "NEXON Lv2 Gothic", sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -139,7 +142,7 @@
         const resultUrl = `https://youngkang-design.github.io/simtae/hs-${params.get("type")}${
           window.location.search
         }`;
-        const adUrl = "https://link.coupang.com/a/0260d";
+        const adUrl = "https://link.coupang.com/a/1WIJj";
         const continueButton = document.querySelector("#continueButton");
         const countdownElement = document.querySelector("#countdown");
         const countdownSpan = countdownElement.querySelector("span");
@@ -168,7 +171,7 @@
                 countdown--;
               } else {
                 clearInterval(countdownInterval);
-                countdownSpan.innerHTML = `<a href="https://destination.con">X</a>`;
+                countdownSpan.innerHTML = `<a href="${resultUrl}">X</a>`;
               }
             }, 1000);
             continueButton.addEventListener("click", function () {
