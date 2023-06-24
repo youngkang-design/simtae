@@ -63,6 +63,26 @@
       }
     </script>
 
+<script>
+window.onload = function() {
+  var copyButton = document.querySelector('.iQ__jVVhcdUu');
+  
+  if(copyButton){
+    copyButton.addEventListener('click', function(event) {
+      var copyText = "https://simte.xyz/heartsignal";
+  
+      // 복사 코드
+      navigator.clipboard.writeText(copyText).then(function() {
+        alert('링크를 잘 복사했어요. 친구에게 공유해보세요!');
+      }).catch(function(error) {
+        console.error('Could not copy text: ', error);
+      });
+    });
+  } else {
+    console.error("Element with class '.iQ__jVVhcdUu' not found");
+  }
+};
+</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 
@@ -1578,7 +1598,7 @@
               <div
                 class="iQ__NVudla3m image"
                 style="
-                  background-image: url('https://doda-static.com/img/1200/65/1/1/1686989911675-6641424.png');
+                  background-image: url('https://youngkang-design.github.io/simtae/hs/estj.png');
                 "
               ></div>
             </div>
@@ -1672,7 +1692,7 @@
                           <p><span style="font-weight: bold">Good</span></p>
                           <p>
                             <img
-                              src="https://doda-static.com/img/400/65/1/1/1686989911675-6641424.png"
+                              src="https://youngkang-design.github.io/simtae/hs/esfp.png"
                             />
                           </p>
                           <p><span style="font-size: small">오영주</span></p>
@@ -1683,7 +1703,7 @@
                           <p><span style="font-weight: bold">Bad</span></p>
                           <p>
                             <img
-                              src="https://doda-static.com/img/400/65/1/1/1686989911675-6641424.png"
+                              src="https://youngkang-design.github.io/simtae/hs/estp.png"
                             />
                           </p>
                           <p><span style="font-size: small">김지민</span></p>
