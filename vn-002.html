@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: sans-serif;
+      }
+
+      #continueButton {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #C016D2;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
+
+      #continueButton:hover {
+        background-color: #ad1dbd;
+      }
+      #continueButton:active {
+        background-color: #ad1dbd;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+
+      #notice {
+        font-size: 10px;
+        margin-top: 20px;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <a id="continueButton" href="https://youngkang-design.github.io/simtae/vn-002"
+      >Nhấn nút và xem kết quả</a>
+
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search);
+        const resultUrl = `https://youngkang-design.github.io/simtae/vn-002-${params.get("type")}${
+          window.location.search
+        }`;
+        const adUrl = "https://shorten.asia/wqnZZuhw";
+        const continueButton = document.querySelector("#continueButton");
+
+        window.onload = function () {
+          continueButton.href = resultUrl;
+        };
+
+        continueButton.addEventListener("click", function () {
+          window.open(adUrl);
+        });
+      })();
+    </script>
+  </body>
+</html>
